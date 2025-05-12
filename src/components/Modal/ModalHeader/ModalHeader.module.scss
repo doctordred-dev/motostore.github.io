@@ -1,0 +1,31 @@
+@use '../_variables' as *;
+
+.title {
+  padding-bottom: $spacing;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $text-color;
+}
+
+.price {
+  padding-bottom: $spacing;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $text-color;
+}
+
+.color {
+  padding-bottom: $spacing;
+  font-size: 1rem;
+  color: $text-color;
+}
+
+.img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: $border-radius;
+  margin-bottom: $spacing;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+

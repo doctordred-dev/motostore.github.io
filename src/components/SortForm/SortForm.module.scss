@@ -1,0 +1,150 @@
+.sortForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  
+  @media (min-width: 600px) {
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  @media (max-width: 1600px) {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    position: static;
+    height: auto;
+    width: 100%;
+    
+    .selectWrapper {
+      width: 100%;
+      margin-bottom: 10px;
+      
+      .MuiFormControl-root {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.selectWrapper {
+  flex: 1;
+  min-width: 200px;
+  margin: 5px 0;
+  
+  @media (max-width: 480px) {
+    min-width: 100%;
+  }
+}
+
+.label {
+  color: #bbb !important;
+  
+  &.Mui-focused {
+    color: #ff3c00 !important;
+  }
+}
+
+.select {
+  color: white;
+  
+  .MuiSelect-icon {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .MuiOutlinedInput-input {
+    color: white;
+    padding: 12px 14px;
+    
+    @media (max-width: 600px) {
+      padding: 10px 14px;
+    }
+  }
+  
+  .MuiSelect-select {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background-color: #2a2a2a;
+    }
+  }
+  
+  .MuiFormControl-root {
+    width: 100%;
+    
+    .MuiInputBase-root {
+      background-color: #2a2a2a;
+      color: #fff;
+      border-radius: 8px;
+    }
+  }
+  
+  .MuiOutlinedInput-notchedOutline {
+    border-color: #444;
+  }
+  
+  &:hover .MuiOutlinedInput-notchedOutline {
+    border-color: #666;
+  }
+  
+  &.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #ff3c00;
+    box-shadow: 0 0 0 2px rgba(255, 60, 0, 0.2);
+  }
+  
+  &.Mui-disabled {
+    opacity: 0.7;
+    
+    .MuiOutlinedInput-notchedOutline {
+      border-color: #333 !important;
+    }
+  }
+}
+
+// Стили для выпадающего меню
+.MuiPaper-root {
+  background-color: #2a2a2a !important;
+  color: white !important;
+  margin-top: 5px;
+  border-radius: 8px !important;
+  
+  .MuiMenuItem-root {
+    color: white;
+    font-size: 0.9rem;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    &.Mui-selected {
+      background-color: rgba(255, 60, 0, 0.2);
+      
+      &:hover {
+        background-color: rgba(255, 60, 0, 0.3);
+      }
+    }
+  }
+  
+  .MuiList-root {
+    padding: 8px 0;
+  }
+  
+  .MuiMenuItem-gutters {
+    padding: 8px 16px;
+  }
+  
+  .Mui-selected {
+    color: #ff3c00;
+  }
+  
+  .Mui-selected:hover {
+    background-color: rgba(255, 60, 0, 0.2);
+  }
+}

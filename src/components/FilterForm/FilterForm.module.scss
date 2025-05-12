@@ -1,0 +1,208 @@
+/* Базовые стили для мобильной версии */
+.filterForm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #181818;
+  z-index: 1002;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ff3c00 #383838;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+  padding: 100px 50px 20px 20px;
+
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #383838;
+    border-radius: 3px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: #ff3c00;
+    border-radius: 3px;
+  }
+
+  /* Стили для десктопной версии (шире 1600px) */
+  @media (min-width: 1601px) {
+    position: fixed;
+    top: 120px;
+    left: 18%;
+    width: 300px;
+    height: auto;
+    max-height: calc(100vh - 160px);
+    border-radius: 10px;
+    padding: 20px; /* Сбрасываем отступы для десктопа */
+    
+    .headerContainer {
+      position: relative;
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+    
+    .closeButton {
+      display: none !important; /* Скрываем кнопку закрытия на десктопе */
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 300px;
+    padding: 100px 15px 15px 15px;
+  }
+
+  @media (max-width: 480px) {
+    width: 85%;
+  }
+
+  &:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .closeButton {
+    display: none;
+    color: #fff !important;
+    margin-left: 10px;
+    
+    @media (max-width: 1600px) {
+      display: flex;
+    }
+  }
+
+  .filterWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .filterTitle {
+    color: white;
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+    border-bottom: 1px solid #333;
+    position: relative;
+    
+    @media (max-width: 480px) {
+      margin-top: 10px;
+      font-size: 1.3rem;
+    }
+  }
+
+  .sliderContainer {
+    margin: 10px 0;
+    padding: 10px 0;
+    
+    @media (max-width: 480px) {
+      margin: 8px 0;
+      padding: 8px 0;
+    }
+  }
+
+  .priceLabel {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: white;
+    font-size: 0.9rem;
+    
+    @media (max-width: 480px) {
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+    }
+  }
+
+  .resetButton {
+    margin-top: 10px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 8px 16px;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+    
+    @media (max-width: 480px) {
+      margin-top: 15px;
+      padding: 10px 16px;
+      font-size: 1rem;
+    }
+  }
+
+  .searchField {
+    margin-bottom: 10px;
+
+    .MuiOutlinedInput-root {
+      border-radius: 8px;
+      
+      fieldset {
+        border-color: #444;
+      }
+      
+      &:hover fieldset {
+        border-color: #666;
+      }
+      
+      &.Mui-focused fieldset {
+        border-color: #ff3c00;
+      }
+    }
+
+    input {
+      color: white;
+      padding: 12px 14px;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+
+      &::placeholder {
+        color: #999;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 2px rgba(255, 60, 0, 0.2);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      margin-bottom: 15px;
+      
+      input {
+        padding: 14px 16px;
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  .mobileCloseButton {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    
+    @media (max-width: 480px) {
+      display: block;
+    }
+  }
+}

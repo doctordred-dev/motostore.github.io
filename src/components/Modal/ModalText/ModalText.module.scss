@@ -1,0 +1,62 @@
+@use 'sass:color';
+@use '../_variables' as *;
+
+.modalText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing;
+  font-family: $font-primary;
+  background-color: #f5f5f5;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333333;
+  text-align: center;
+  font-family: $font-secondary;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #555555;
+  text-align: center;
+  max-width: 400px;
+  line-height: 1.5;
+  font-family: $font-primary;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333333;
+  font-family: $font-primary;
+}
+
+.color {
+  font-size: 1rem;
+  color: #555555;
+  font-family: $font-primary;
+}
+
+.btnAdd {
+  width: 100%;
+  max-width: 300px;
+  background-color: $action-color;
+  color: white;
+  padding: 1rem;
+  border-radius: $border-radius;
+  border: 1px solid whitesmoke;
+  font-weight: 600;
+  font-family: $font-primary;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: color.scale($action-color, $lightness: -10%);
+  }
+}

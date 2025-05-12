@@ -1,0 +1,15 @@
+@use '../_variables' as *;
+
+.ModalClose {
+  position: absolute;
+  top: $spacing;
+  right: $spacing;
+  color: #3C4242;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $primary-color;
+  }
+}

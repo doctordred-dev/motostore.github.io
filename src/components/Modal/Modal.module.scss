@@ -1,0 +1,94 @@
+@use 'sass:color';
+@use './_variables' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+.modal {
+  font-family: $font-primary;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  overflow: auto;
+  backdrop-filter: blur(2px);
+
+  h2, h3 {
+    font-family: $font-secondary;
+  }
+
+  h2 {
+    color: $text-color;
+    font-weight: 600;
+    margin-bottom: $spacing;
+  }
+
+  h3 {
+    color: #b3b3b3;
+    font-weight: 500;
+    margin-bottom: $spacing;
+  }
+
+  p {
+    color: $text-color;
+    margin-bottom: $spacing;
+  }
+
+  .modalBody {
+    background-color: $background-color;
+    border-radius: $border-radius;
+    padding: 2rem;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .modalFooter {
+    margin-top: $spacing;
+    display: flex;
+    gap: $spacing;
+    justify-content: flex-end;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: $border-radius;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .btnPrimary {
+    background-color: $primary-color;
+    color: white;
+
+    &:hover {
+      background-color: color.scale($primary-color, $lightness: -10%);
+    }
+  }
+
+  .btnSecondary {
+    background-color: $secondary-color;
+    color: white;
+
+    &:hover {
+      background-color: color.scale($secondary-color, $lightness: -10%);
+    }
+  }
+
+  .btnCancel {
+    background-color: #E0E0E0;
+    color: $text-color;
+
+    &:hover {
+      background-color: color.scale(#E0E0E0, $lightness: -10%);
+    }
+  }
+}

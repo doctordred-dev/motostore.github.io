@@ -1,0 +1,48 @@
+@use 'sass:color';
+@use '../_variables' as *;
+
+.modalFooter {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing;
+  gap: $spacing;
+
+  .btn {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border-radius: $border-radius;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .btnPrimary {
+    background-color: $primary-color;
+    color: white;
+
+    &:hover {
+      background-color: color.scale($primary-color, $lightness: -10%);
+    }
+  }
+
+  .btnSecondary {
+    background-color: $secondary-color;
+    color: white;
+
+    &:hover {
+      background-color: color.scale($secondary-color, $lightness: -10%);
+    }
+  }
+
+  .btnCancel {
+    background-color: #E0E0E0;
+    color: $text-color;
+
+    &:hover {
+      background-color: color.adjust(#E0E0E0, $lightness: -10%);
+    }
+  }
+}
