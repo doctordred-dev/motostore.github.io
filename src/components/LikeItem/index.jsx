@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './likeItem.module.scss';
+import styles from './LikeItem.module.scss';
 import { X } from 'lucide-react';
 import {useDispatch,} from 'react-redux';
 import {toggleLike} from "../../redux/slices/motorcyclesSlice.js";
