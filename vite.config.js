@@ -9,9 +9,16 @@ export default defineConfig({
   base,
   plugins: [react()],
   build: {
-    outDir: 'public', // GitLab Pages по умолчанию ищет папку 'public'
+    outDir: 'public',
     assetsDir: 'assets',
     sourcemap: true,
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+      },
+    },
   },
   server: {
     port: 3000,
