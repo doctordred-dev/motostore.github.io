@@ -1,0 +1,2 @@
+import{j as s,h as r}from"./index-Cbf8YS0s.js";const o={},a=({onClick:t,className:e=""})=>s.jsx("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",onClick:t,className:`${o.star} ${e}`,children:s.jsx("path",{d:"M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"})});a.propTypes={onClick:r.func.isRequired,className:r.string};export{a as S};
+//# sourceMappingURL=index-BCWo3ukV.js.map
