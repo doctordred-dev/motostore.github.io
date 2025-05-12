@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router';
 import { memo, useState, useEffect } from 'react';
 import classNames from 'classnames';
+import logo from '../images/logo.png'
 
-const Header = ({ imgSrc, likeCounter, favoriteCounter }) => {
+const Header = ({likeCounter, favoriteCounter }) => {
     const scrollY = useScrollY();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
@@ -31,7 +32,7 @@ const Header = ({ imgSrc, likeCounter, favoriteCounter }) => {
         <header className={classNames(styles.header, { [styles.scrolled]: scrollY > 100 })}>
             <div className={styles.headerContainer}>
                 <div className={styles.logoContainer}>
-                    <img className={styles.logo} src={imgSrc} alt="logo" />
+                    <img className={styles.logo} src={logo} alt="logo" />
                     {isMobile && (
                         <button 
                             className={`${styles.burgerMenu} ${isMenuOpen ? styles.open : ''}`} 
@@ -75,7 +76,6 @@ const Header = ({ imgSrc, likeCounter, favoriteCounter }) => {
 };
 
 Header.propTypes = {
-    imgSrc: PropTypes.string.isRequired,
     likeCounter: PropTypes.number.isRequired,
     favoriteCounter: PropTypes.number.isRequired,
 };

@@ -20,7 +20,7 @@ function App() {
     return (
         <>
             <ErrorBoundary>
-                <Header imgSrc={'/images/logo.png'}
+                <Header
                         favoriteCounter={favoritesMoto.length}
                         likeCounter={likedMoto.length}/>
                 <main>
