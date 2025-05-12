@@ -260,12 +260,9 @@
   }
   
   .sideDelete {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: none;
+    background-color: gray;
     border: none;
-    color: var(--text-gray);
+    color: white;
     cursor: pointer;
     font-size: 1rem;
     padding: 0.25rem;
@@ -273,7 +270,7 @@
     transition: var(--transition);
     
     &:hover {
-      color: #ff5c5c;
+      background-color: #c0391b;
     }
     
     @media (max-width: 480px) {

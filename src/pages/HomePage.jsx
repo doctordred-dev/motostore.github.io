@@ -14,7 +14,7 @@ const HomePage = () => {
                     <Link to="/motorcycles" className={styles.button}>Переглянути мотоцикли</Link>
                 </div>
                 <div className={styles.heroImage}>
-                    <img src={process.env.PUBLIC_URL + '/images/hero.jpg'} alt="hero" />
+                    <img src={'/images/hero.jpg'} alt="hero" />
                 </div>
             </section>
 
