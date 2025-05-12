@@ -1,9 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Для GitLab Pages используем имя репозитория как базовый путь
-const repositoryName = 'motostore';
-const base = process.env.NODE_ENV === 'production' ? `/${repositoryName}/` : '/';
+// Для GitLab Pages используем базовый путь из переменной окружения или оставляем корневой
+const base = process.env.NODE_ENV === 'production' ? '/' : '/';
 
 export default defineConfig({
   base,
