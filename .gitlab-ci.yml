@@ -1,39 +1,19 @@
-image: node:latest
+image: node:20
 
 cache:
   paths:
     - node_modules/
 
-variables:
-  NODE_VERSION: "20"
-
-before_script:
-  - node -v
-  - npm install -g npm@latest
-  - npm install
-
 stages:
-  - build
   - deploy
 
-build:
-  stage: build
+pages:
+  stage: deploy
   script:
+    - npm install
     - npm run build
   artifacts:
     paths:
       - public
   only:
     - main
-
-pages:
-  stage: deploy
-  script:
-    - echo "Deploying to GitLab Pages..."
-  dependencies: []
-  artifacts:
-    paths:
-      - public
-  only:
-    - main
-  environment: production
