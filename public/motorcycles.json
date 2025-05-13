@@ -155,7 +155,7 @@
   {
     "name": "Harley-Davidson Iron 883",
     "price": 620000,
-    "imageUrl": "/images/ducati.jpg",
+    "imageUrl": "images/ducati.jpg",
     "sku": "200010",
     "color": "Матово-чорний",
     "quantity": 1,

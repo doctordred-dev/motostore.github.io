@@ -1,11 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Для GitLab Pages используем базовый путь из переменной окружения или оставляем корневой
-const base = process.env.NODE_ENV === 'production' ? '/' : '/';
+
 
 export default defineConfig({
-  base,
+  base: '/',
   plugins: [react()],
   build: {
     outDir: 'dist',
