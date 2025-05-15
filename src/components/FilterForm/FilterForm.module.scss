@@ -1,4 +1,4 @@
-/* Базовые стили для мобильной версии */
+
 .filterForm {
   position: fixed;
   top: 0;
@@ -28,16 +28,15 @@
     border-radius: 3px;
   }
 
-  /* Стили для десктопной версии (шире 1600px) */
   @media (min-width: 1601px) {
     position: fixed;
     top: 120px;
-    left: 18%;
-    width: 300px;
+    left: 14%;
+    width: 250px;
     height: auto;
     max-height: calc(100vh - 160px);
     border-radius: 10px;
-    padding: 20px; /* Сбрасываем отступы для десктопа */
+    padding: 40px;
     
     .headerContainer {
       position: relative;
@@ -46,7 +45,7 @@
     }
     
     .closeButton {
-      display: none !important; /* Скрываем кнопку закрытия на десктопе */
+      display: none !important;
     }
   }
 
@@ -84,11 +83,14 @@
   .filterWrapper {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 1px;
     width: 100%;
+    padding: 10px;
+    padding-right: 30px;
   }
 
   .filterTitle {
+    width: 100%;
     color: white;
     margin: 0 0 15px 0;
     padding-bottom: 10px;
@@ -116,7 +118,9 @@
 
   .priceLabel {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 8px;
     color: white;
     font-size: 0.9rem;

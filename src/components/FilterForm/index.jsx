@@ -100,6 +100,23 @@ function FilterForm({ onClose, isOpen }) {
                     InputLabelProps={{
                         style: { color: 'white' }
                     }}
+
+                    sx={{
+                        '& .MuiOutlinedInput-root': {
+                            '& input': {
+                                textAlign: 'center',
+                            },
+                            '& fieldset': {
+                                borderColor: 'white',
+                            },
+                            '&:hover fieldset': {
+                                borderColor: '#ff3c00',
+                            },
+                            '&.Mui-focused fieldset': {
+                                borderColor: '#ff3c00',
+                            },
+                        },
+                    }}
                 />
 
                 <Box className={styles.sliderContainer}>
