@@ -41,7 +41,7 @@ const Cart = ({position}) => {
                                 <span>Разом:</span>
                                 <span className={styles.total}>{total.toLocaleString('uk-UA')} грн</span>
                             </div>
-                            <button className={styles.accept}>Оформити замовлення</button>
+                            <button form='cartForm' type='submit' className={styles.accept}>Оформити замовлення</button>
                         </>
                     ) : (
                         <p className={styles.empty}>Кошик порожній</p>
