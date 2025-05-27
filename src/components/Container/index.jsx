@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import { useViewMode } from '../../Context/ViewModeContext';
+
 import styles from './Container.module.scss';
 import Item from "../Item/";
 import { useDispatch, useSelector } from "react-redux";
 import { AnimatePresence, motion } from 'framer-motion';
 
 const Container = () => {
+    const { viewMode } = useViewMode();
+
     const dispatch = useDispatch();
     const motorcycles = useSelector(state => state.motorcycles.data);
     const {search, priceRange, power, maxSpeed, engineVolume} = useSelector((state) => state.filter);
@@ -33,7 +37,7 @@ const Container = () => {
     };
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${viewMode === 'list' ? styles.listView : ''}`}>
             {filteredMotorcycles.length > 0 ? (
                 <AnimatePresence>
                     {filteredMotorcycles.map(({name, price, imageUrl, sku, color, isFavorite, specs}) => {
@@ -58,6 +62,7 @@ const Container = () => {
                                     isLiked={isLiked}
                                     specs={specs}
                                     isHovered={isHovered}
+                                    viewMode={viewMode}
                                 />
                             </div>
                         );

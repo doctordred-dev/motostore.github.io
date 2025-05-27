@@ -1,15 +1,18 @@
 import useScrollY from '../../hooks/useScrollY';
 import styles from './Header.module.scss';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router';
+import { NavLink, useLocation } from 'react-router';
 import { memo, useState, useEffect } from 'react';
 import classNames from 'classnames';
-
+import { useViewMode } from '../../Context/ViewModeContext';
+import Button from '../Button';
+import ViewModeToggle from '../ViewModeToggle';
 
 const Header = ({likeCounter, favoriteCounter }) => {
     const scrollY = useScrollY();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+    const location = useLocation();
 
 
     useEffect(() => {
@@ -27,6 +30,10 @@ const Header = ({likeCounter, favoriteCounter }) => {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
+    const { viewMode, toggleViewMode } = useViewMode();
+
+
 
     return (
         <header className={classNames(styles.header, { [styles.scrolled]: scrollY > 100 })}>
@@ -55,6 +62,9 @@ const Header = ({likeCounter, favoriteCounter }) => {
                 </nav>
                 
                 <div className={styles.actions}>
+
+                {location.pathname === '/motorcycles' && !isMobile&& <ViewModeToggle />}
+
                     <NavLink 
                         to='/favorite' 
                         className={({isActive}) => isActive ? `${styles.favorite} ${styles.active}` : styles.favorite}

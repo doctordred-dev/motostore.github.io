@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router';
 
 
 
-const Item = ({name, price, imageUrl, sku, color, isInCart, isLiked, specs, isHovered = false}) => {
+const Item = ({name, price, imageUrl, sku, color, isInCart, isLiked, specs, isHovered = false, viewMode}) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -44,15 +44,24 @@ const Item = ({name, price, imageUrl, sku, color, isInCart, isLiked, specs, isHo
             exit={{ scale: 0.8, opacity: 0 }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
             onClick={handleItemClick}
-
-            className={styles.card}>
-            <div style={{width: 30, height: 30}} className={classNames(styles.favSvg, {[styles.fav]: isLiked})}>
+            className={classNames(styles.card, {
+                [styles.list]: viewMode === 'list'
+              })}
+            >
+            <div style={{width: 30, height: 30}}
+            className={classNames(styles.favSvg, {
+                [styles.fav]: isLiked,
+                [styles.listFavSvg]: viewMode === 'list'
+              })}
+            >
 
                 <Star onClick={handleLikeClick}/>
             </div>
 
 
-            <img src={imageUrl} alt={name} className={styles.image}/>
+            <img src={imageUrl} alt={name} className={classNames(styles.image, {
+                [styles.listImage]: viewMode === 'list'
+            })}/>
 
             <div className={styles.info}>
                 <h2 className={styles.title}>{name}</h2>
@@ -78,8 +87,9 @@ const Item = ({name, price, imageUrl, sku, color, isInCart, isLiked, specs, isHo
                 }}
                 className={classNames(styles.btn, {
                     [styles.inCart]: isInCart,
-                    [styles.notInCart]: !isInCart
-                })}
+                    [styles.notInCart]: !isInCart,
+                    [styles.listBtn]: viewMode === 'list'
+                  })}
             >
                 {isInCart ? 'Видалити з кошика' : 'Додати до кошика'}
             </Button>

@@ -6,6 +6,7 @@ import App from './App.jsx'
 import {Provider} from "react-redux";
 import store, {persistor} from './store'
 import {PersistGate} from "redux-persist/integration/react";
+import { ViewModeProvider } from './Context/ViewModeContext';
 
 
 createRoot(document.getElementById('root')).render(
@@ -13,7 +14,9 @@ createRoot(document.getElementById('root')).render(
         <Provider store={store}>
             <PersistGate persistor={persistor} loading={<h1>LOADING.......</h1>}>
                 <BrowserRouter>
-                    <App/>
+                    <ViewModeProvider>
+                        <App/>
+                    </ViewModeProvider>
                 </BrowserRouter>
             </PersistGate>
         </Provider>

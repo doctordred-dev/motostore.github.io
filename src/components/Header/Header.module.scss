@@ -168,6 +168,24 @@ a {
   }
 }
 
+.toggleViewModeBtn{
+  border-radius: 10px;
+  border: none;
+  color: var(--text-color);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-weight: 500;
+  font-family: $font-primary;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  position: relative;
+  padding: 5px;
+
+  &:hover {
+    color: var(--accent-color);
+  }
+}
+
 .favorite, .cart {
   display: flex;
   align-items: center;

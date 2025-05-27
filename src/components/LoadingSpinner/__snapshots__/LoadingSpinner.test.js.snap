@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingSpinner component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="spinnerContainer"
+  >
+    <div
+      class="spinner"
+    />
+    <p
+      class="loadingText"
+    >
+      Завантаження...
+    </p>
+  </div>
+</DocumentFragment>
+`;

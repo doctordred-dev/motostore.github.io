@@ -1,0 +1,44 @@
+.toggleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .toggleIcon {
+    color: #ccc;
+    transition: color 0.3s;
+  
+    &[weight='fill'] {
+      color: #ff3c00;
+    }
+  }
+  
+  .switchRoot {
+    all: unset;
+    width: 42px;
+    height: 25px;
+    background-color: #1a1a1a;
+    border-radius: 9999px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 0 2px rgba(255, 60, 0, 0.3);
+    transition: background-color 0.2s;
+  }
+  
+  .switchThumb {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 9999px;
+    transition: transform 0.2s;
+    transform: translate(3px, -50%);
+    will-change: transform;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+  
+  .switchRoot[data-state='checked'] .switchThumb {
+    transform: translate(19px, -50%);
+  }

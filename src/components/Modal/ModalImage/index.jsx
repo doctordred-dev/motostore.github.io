@@ -16,6 +16,7 @@ const ModalImage = ({isOpen, imgURL}) => {
     const motorcycle = useSelector(state => state.motorcycles.selectedMotorcycle);
 
     if (!motorcycle) return null;
+
     const {name, price, imageUrl, color} = motorcycle;
 
     const handleDelete = () => {

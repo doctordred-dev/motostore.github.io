@@ -109,8 +109,61 @@
       fill: #ff3c00;
     }
   }
+}
 
+.list .favSvg {
+  top: 18px;
+  left: 18px;
 
+  transform: none;
+}
+
+.list {
+  flex-direction: row;
+  max-width: 100%;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+
+  .image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .info {
+    text-align: left;
+    flex: 1;
+  }
+
+  .btn {
+    margin-top: 6%;
+    align-self: flex-start;
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+}
+
+.listImage {
+  width: 150px;
+  height: auto;
+}
+
+.listInfo {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.listBtn {
+  margin-left: auto;
+  align-self: flex-start;
+}
+
+.listFavSvg {
+  top: 16px;
+  left: 16px;
 }
 
 
